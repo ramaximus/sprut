@@ -1,0 +1,11 @@
+{
+  "scenarioTemplate": {
+    "name": "Обновление данных Ecowitt",
+    "desc": "",
+    "active": true,
+    "onStart": true,
+    "sync": false,
+    "data": "{\"targets\":[{\"type\":\"if\",\"if\":{\"type\":\"condition\",\"mode\":\"OR\",\"conditions\":[{\"type\":\"cron\",\"cron\":\"0 0/5 * ? * * *\",\"mode\":\"NONE\",\"offset\":0}]},\"then\":[{\"type\":\"code\",\"code\":\"global.ecowitt_Update();\\n\"}],\"else\":null,\"mode\":\"EVERY\"}]}",
+    "type": "BLOCK"
+  }
+}
