@@ -1,0 +1,74 @@
+{
+  "name": "Датчик присутствия Mikrotik",
+  "manufacturer": "Mikrotik",
+  "model": "CAPSMAN",
+  "modelIds": [
+    "mikrotik/presence/(.*)/name"
+  ],
+  "description": "Шаблон для работы с Mikrotik CAPSMAN",
+  "comment": "(c) @ramaximum",
+  "services": [
+    {
+      "name": "Присутствие",
+      "type": "OccupancySensor",
+      "characteristics": [
+        {
+          "type": "OccupancyDetected",
+          "link": [
+            {
+              "type": "Integer",
+              "topicGet": "mikrotik/presence/(1)/occupancy"
+            }
+          ]
+        },
+        {
+          "type": "Name",
+          "link": [
+            {
+              "type": "String",
+              "topicGet": "mikrotik/presence/(1)/name"
+            }
+          ]
+        },
+        {
+          "type": "C_Distance",
+          "link": [
+            {
+              "type": "Double",
+              "topicGet": "mikrotik/presence/(1)/signal",
+              "inFunc": "value / -10"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "options": [
+    {
+      "link": [
+        {
+          "type": "String",
+          "topicGet": "mikrotik/presence/(1)/name"
+        }
+      ],
+      "name": "Имя",
+      "description": "Имя устройства или человека, из CAPsMAN access-list comment",
+      "inputType": "TEXT",
+      "write": false,
+      "type": "String"
+    },
+    {
+      "link": [
+        {
+          "type": "String",
+          "topicGet": "mikrotik/presence/(1)/interface"
+        }
+      ],
+      "name": "Интерфейс",
+      "description": "Интерфейс точки доступа, где зарегистрировано устройство",
+      "inputType": "TEXT",
+      "write": false,
+      "type": "String"
+    }
+  ]
+}
