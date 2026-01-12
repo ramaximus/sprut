@@ -18,7 +18,6 @@
        :set varInterface "none"
      } 
  :set varComment [:pick $varComment (4) ([:len $varComment])]
- :put ("$varMAC\t$varComment\t$varStatus\t$varSignal\t$varInterface")
  /iot mqtt publish broker="spruthub" retain=yes message=$varComment topic="mikrotik/presence/$varMAC/name"
  /iot mqtt publish broker="spruthub" retain=no message=$varStatus topic="mikrotik/presence/$varMAC/occupancy"
  /iot mqtt publish broker="spruthub" retain=no message=$varSignal topic="mikrotik/presence/$varMAC/signal"
