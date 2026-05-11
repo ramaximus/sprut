@@ -1,0 +1,275 @@
+{
+  "manufacturer": "Alutech",
+  "model": "ZB-Sm",
+  "manufacturerIds": [
+    "_TZE200_zyrdrmno"
+  ],
+  "modelIds": [
+    "TS0601"
+  ],
+  "catalogId": 3730,
+  "description": "Улучшенный шаблон для Zigbee-модуля к рольставням Alutech",
+  "comment": "@ramaximum",
+  "issue": "https://github.com/sprut/Hub/issues/1162",
+  "init": [
+    {
+      "tuya": "[{\"code\":\"control\",\"defaultValue\":\"\",\"canTrigger\":true,\"iconname\":\"icon-dp_house\",\"type\":\"obj\",\"executable\":true,\"mode\":\"rw\",\"defaultRecommend\":false,\"name\":\"控制\",\"property\":{\"range\":[\"open\",\"stop\",\"close\",\"continue\"],\"type\":\"enum\"},\"id\":1,\"editPermission\":false},{\"code\":\"percent_control\",\"defaultValue\":\"\",\"canTrigger\":true,\"iconname\":\"icon-setting\",\"type\":\"obj\",\"executable\":true,\"mode\":\"rw\",\"defaultRecommend\":false,\"name\":\"开启百分比控制\",\"property\":{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1,\"type\":\"value\"},\"id\":2,\"editPermission\":false},{\"code\":\"percent_state\",\"defaultValue\":\"\",\"canTrigger\":true,\"type\":\"obj\",\"executable\":true,\"mode\":\"ro\",\"defaultRecommend\":false,\"name\":\"开启百分比状态\",\"property\":{\"unit\":\"%\",\"min\":0,\"max\":100,\"scale\":0,\"step\":1,\"type\":\"value\"},\"id\":3,\"editPermission\":false},{\"code\":\"control_back\",\"defaultValue\":\"\",\"canTrigger\":true,\"type\":\"obj\",\"executable\":true,\"mode\":\"rw\",\"defaultRecommend\":false,\"name\":\"电机反向\",\"property\":{\"range\":[\"forward\",\"back\"],\"type\":\"enum\"},\"id\":5,\"editPermission\":false},{\"code\":\"work_state\",\"defaultValue\":\"\",\"canTrigger\":true,\"type\":\"obj\",\"executable\":true,\"mode\":\"ro\",\"defaultRecommend\":false,\"name\":\"工作状态\",\"property\":{\"range\":[\"opening\",\"closing\"],\"type\":\"enum\"},\"id\":7,\"editPermission\":false},{\"code\":\"time_total\",\"defaultValue\":\"\",\"canTrigger\":true,\"type\":\"obj\",\"executable\":true,\"mode\":\"ro\",\"defaultRecommend\":false,\"name\":\"Total Time\",\"property\":{\"unit\":\"ms\",\"min\":0,\"max\":120000,\"scale\":0,\"step\":1,\"type\":\"value\"},\"id\":10,\"editPermission\":false},{\"code\":\"situation_set\",\"defaultValue\":\"\",\"canTrigger\":true,\"type\":\"obj\",\"executable\":true,\"mode\":\"ro\",\"defaultRecommend\":false,\"name\":\"百分比含义\",\"property\":{\"range\":[\"fully_open\",\"fully_close\"],\"type\":\"enum\"},\"id\":11,\"editPermission\":false},{\"code\":\"fault\",\"defaultValue\":\"\",\"canTrigger\":true,\"type\":\"obj\",\"executable\":true,\"mode\":\"ro\",\"defaultRecommend\":false,\"name\":\"故障告警\",\"property\":{\"label\":[\"motor_fault\"],\"type\":\"bitmap\",\"maxlen\":1},\"id\":12,\"editPermission\":false},{\"code\":\"Motor_type\",\"defaultValue\":\"0001\",\"canTrigger\":true,\"type\":\"obj\",\"executable\":true,\"mode\":\"ro\",\"defaultRecommend\":false,\"name\":\"Motor_type\",\"property\":{\"range\":[\"0001\",\"0002\",\"0003\",\"0004\",\"0005\",\"0006\",\"0007\",\"0008\",\"0009\",\"0010\"],\"type\":\"enum\"},\"id\":101,\"editPermission\":false},{\"code\":\"Cycle_total\",\"defaultValue\":\"0\",\"canTrigger\":true,\"type\":\"obj\",\"executable\":true,\"mode\":\"ro\",\"defaultRecommend\":false,\"name\":\"Cycle_total\",\"property\":{\"unit\":\"\",\"min\":0,\"max\":100000,\"scale\":0,\"step\":1,\"type\":\"value\"},\"id\":102,\"editPermission\":false},{\"code\":\"Limit_bottom\",\"defaultValue\":\"set\",\"canTrigger\":true,\"type\":\"obj\",\"executable\":true,\"mode\":\"rw\",\"defaultRecommend\":false,\"name\":\"Limit_bottom\",\"property\":{\"range\":[\"set\",\"delete\"],\"type\":\"enum\"},\"id\":103,\"editPermission\":false},{\"code\":\"Limit_top\",\"defaultValue\":\"set\",\"canTrigger\":true,\"type\":\"obj\",\"executable\":true,\"mode\":\"rw\",\"defaultRecommend\":false,\"name\":\"Limit_top\",\"property\":{\"range\":[\"set\",\"delete\"],\"type\":\"enum\"},\"id\":104,\"editPermission\":false},{\"code\":\"Limit_favorite\",\"defaultValue\":\"set\",\"canTrigger\":true,\"type\":\"obj\",\"executable\":true,\"mode\":\"rw\",\"defaultRecommend\":false,\"name\":\"Limit_favorite\",\"property\":{\"range\":[\"set\",\"delete\"],\"type\":\"enum\"},\"id\":105,\"editPermission\":false},{\"code\":\"Limits_mode\",\"defaultValue\":\"false\",\"canTrigger\":true,\"type\":\"obj\",\"executable\":true,\"mode\":\"rw\",\"defaultRecommend\":false,\"name\":\"Limits_mode\",\"property\":{\"type\":\"bool\"},\"id\":106,\"editPermission\":false},{\"code\":\"Energy\",\"defaultValue\":\"0\",\"canTrigger\":true,\"type\":\"obj\",\"executable\":true,\"mode\":\"ro\",\"defaultRecommend\":false,\"name\":\"Energy\",\"property\":{\"unit\":\"Wh\",\"min\":0,\"max\":1000000,\"scale\":3,\"step\":1,\"type\":\"value\"},\"id\":109,\"editPermission\":false},{\"code\":\"Favorite\",\"defaultValue\":\"0\",\"canTrigger\":true,\"type\":\"obj\",\"executable\":true,\"mode\":\"rw\",\"defaultRecommend\":false,\"name\":\"Favorite\",\"property\":{\"unit\":\"%\",\"min\":0,\"max\":101,\"scale\":0,\"step\":1,\"type\":\"value\"},\"id\":115,\"editPermission\":false},{\"code\":\"Request\",\"defaultValue\":\"false\",\"canTrigger\":true,\"type\":\"obj\",\"executable\":true,\"mode\":\"rw\",\"defaultRecommend\":false,\"name\":\"Request\",\"property\":{\"type\":\"bool\"},\"id\":116,\"editPermission\":false},{\"code\":\"Time\",\"defaultValue\":\"0\",\"canTrigger\":true,\"type\":\"obj\",\"executable\":true,\"mode\":\"ro\",\"defaultRecommend\":false,\"name\":\"Time\",\"property\":{\"unit\":\"\",\"min\":0,\"max\":300,\"scale\":0,\"step\":1,\"type\":\"value\"},\"id\":120,\"editPermission\":false},{\"code\":\"State\",\"defaultValue\":\"opening\",\"canTrigger\":true,\"type\":\"obj\",\"executable\":true,\"mode\":\"ro\",\"defaultRecommend\":false,\"name\":\"State\",\"property\":{\"range\":[\"opening\",\"pause\",\"closing\"],\"type\":\"enum\"},\"id\":121,\"editPermission\":false}]"
+    }
+  ],
+  "services": [
+    {
+      "type": "WindowCovering",
+      "logics": [
+        {
+          "type": "TargetPositionFromCurrent"
+        }
+      ],
+      "characteristics": [
+        {
+          "type": "C_TargetPositionState",
+          "link": [
+            {
+              "endpoint": 1,
+              "cluster": "EF00_ManufacturerSpecific",
+              "attribute": "0001_Control",
+              "map": {
+                "CLOSE": "2",
+                "OPEN": "0",
+                "STOP": "1"
+              }
+            }
+          ]
+        },
+        {
+          "type": "CurrentPosition",
+          "link": [
+            {
+              "endpoint": 1,
+              "cluster": "EF00_ManufacturerSpecific",
+              "attribute": "0003_PercentState",
+              "inFunc": "100 - value"
+            }
+          ]
+        },
+        {
+          "type": "TargetPosition",
+          "link": [
+            {
+              "endpoint": 1,
+              "cluster": "EF00_ManufacturerSpecific",
+              "attribute": "0002_PercentControl",
+              "inFunc": "100 - value",
+              "outFunc": "100 - value"
+            }
+          ]
+        },
+        {
+          "type": "PositionState",
+          "link": [
+            {
+              "endpoint": 1,
+              "cluster": "EF00_ManufacturerSpecific",
+              "attribute": "0079_State",
+              "map": {
+                "INCREASING": "0",
+                "DECREASING": "2",
+                "STOPPED": "1"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "options": [
+    {
+      "link": [
+        {
+          "endpoint": 1,
+          "cluster": "EF00_ManufacturerSpecific",
+          "attribute": "0005_ControlBack"
+        }
+      ],
+      "name": "@reverse",
+      "type": "Boolean",
+      "value": true
+    },
+    {
+      "link": [
+        {
+          "endpoint": 1,
+          "cluster": "EF00_ManufacturerSpecific",
+          "attribute": "0001_Control"
+        }
+      ],
+      "name": "Управление: открыть",
+      "description": "Используйте для перемещения мотора к точке калибровки",
+      "type": "Integer",
+      "value": 0,
+      "inputType": "BUTTON"
+    },
+    {
+      "link": [
+        {
+          "endpoint": 1,
+          "cluster": "EF00_ManufacturerSpecific",
+          "attribute": "0001_Control"
+        }
+      ],
+      "name": "Управление: закрыть",
+      "description": "Используйте для перемещения мотора к точке калибровки",
+      "type": "Integer",
+      "value": 2,
+      "inputType": "BUTTON"
+    },
+    {
+      "link": [
+        {
+          "endpoint": 1,
+          "cluster": "EF00_ManufacturerSpecific",
+          "attribute": "0001_Control"
+        }
+      ],
+      "name": "Управление: остановить",
+      "type": "Integer",
+      "value": 1,
+      "inputType": "BUTTON"
+    },
+    {
+      "link": [
+        {
+          "endpoint": 1,
+          "cluster": "EF00_ManufacturerSpecific",
+          "attribute": "0068_LimitTop"
+        }
+      ],
+      "name": "Установка верхней точки",
+      "description": "Включение сбрасывает старую верхнюю точку. Выключение запоминает новую",
+      "type": "Boolean",
+      "value": false
+    },
+    {
+      "link": [
+        {
+          "endpoint": 1,
+          "cluster": "EF00_ManufacturerSpecific",
+          "attribute": "0067_LimitBottom"
+        }
+      ],
+      "name": "Установка нижней точки",
+      "description": "Включение сбрасывает старую нижнюю точку. Выключение запоминает новую",
+      "type": "Boolean",
+      "value": false
+    },
+    {
+      "link": [
+        {
+          "endpoint": 1,
+          "cluster": "EF00_ManufacturerSpecific",
+          "attribute": "0073_Favorite",
+          "inFunc": "100 - value",
+          "outFunc": "100 - value"
+        }
+      ],
+      "name": "Любимая позиция",
+      "type": "Integer",
+      "value": 0,
+      "minValue": 0,
+      "maxValue": 100,
+      "minStep": 1
+    },
+    {
+      "link": [
+        {
+          "endpoint": 1,
+          "cluster": "EF00_ManufacturerSpecific",
+          "attribute": "0066_CycleTotal"
+        }
+      ],
+      "name": "Циклы",
+      "type": "Integer",
+      "value": 0,
+      "write": false,
+      "inputType": "STATUS"
+    },
+    {
+      "link": [
+        {
+          "endpoint": 1,
+          "cluster": "EF00_ManufacturerSpecific",
+          "attribute": "000A_TimeTotal"
+        }
+      ],
+      "name": "Время работы (машинное время)",
+      "type": "Integer",
+      "value": 0,
+      "write": false,
+      "unit": "мс",
+      "inputType": "STATUS"
+    },
+    {
+      "link": [
+        {
+          "endpoint": 1,
+          "cluster": "EF00_ManufacturerSpecific",
+          "attribute": "006D_Energy"
+        }
+      ],
+      "name": "Энергопотребление",
+      "type": "Double",
+      "value": "0.0",
+      "unit": "Вт*ч",
+      "write": false,
+      "inputType": "STATUS"
+    },
+    {
+      "link": [
+        {
+          "endpoint": 1,
+          "cluster": "EF00_ManufacturerSpecific",
+          "attribute": "0074_Request"
+        }
+      ],
+      "name": "Запрос",
+      "description": "Непонятный параметр, выставление которого позволяет увидеть тип мотора",
+      "type": "Boolean",
+      "init": true,
+      "value": true
+    },
+    {
+      "link": [
+        {
+          "endpoint": 1,
+          "cluster": "EF00_ManufacturerSpecific",
+          "attribute": "0065_MotorType",
+          "map": {
+            "": "0",
+            "AM0/6-28R-Sm": "1",
+            "AM0/10-19R-Sm": "2",
+            "AM1/10-13R-Sm": "3",
+            "AM1/20-13R-Sm": "4",
+            "AM1/30-13R-Sm": "5"
+          }
+        }
+      ],
+      "name": "Модель мотора",
+      "type": "String",
+      "write": false,
+      "value": "",
+      "inputType": "STATUS"
+    },
+    {
+      "link": [
+        {
+          "endpoint": 1,
+          "cluster": "EF00_ManufacturerSpecific",
+          "attribute": "000C_Fault"
+        }
+      ],
+      "name": "Проблема",
+      "type": "Integer",
+      "write": false,
+      "inputType": "STATUS"
+    }
+  ]
+}
